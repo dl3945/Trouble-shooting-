@@ -1,0 +1,6 @@
+
+R3-SiteB(config)#router ospf 1
+R3-SiteB(config-router)#auto ref 1000
+R3-SiteB(config-router)#router-id 3.3.3.3
+R3-SiteB#clear ip ospf process 
+Reset ALL OSPF processes? [no]: yes

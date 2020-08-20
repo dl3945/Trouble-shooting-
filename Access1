@@ -1,0 +1,24 @@
+<L2 sw1>
+conf t 
+spanning-tree mode rapid-pvst
+spanning-tree vlan 1-100
+end 
+wr
+show int status
+Access1#show run | exclude keith
+Access1(config)#no spanning-tree portfast bpduguard default
+Access1(config)#int fa0/2 
+Access1(config-if)#ip dhcp snooping trust
+Access1(config)#int range fa0/1-2
+Access1(config-if-range)#switchport mode access
+Access1(config-if-range)#switchport access vlan 10 
+
+----------------server connect (ping 10.67.83.3)------------------
+
+Access1(config)#interface GigabitEthernet0/1
+Access1(config-if)# switchport mode trunk
+Access1(config-if)#no spanning-tree portfast trunk
+Access1(config)#interface GigabitEthernet0/1
+Access1(config-if)# shut
+Access1(config-if)# no shutdown
+

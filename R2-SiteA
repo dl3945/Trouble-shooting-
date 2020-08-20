@@ -1,0 +1,10 @@
+R2-SiteA(config)#ip dhcp pool OURPOOL
+R2-SiteA(dhcp-config)#network 10.67.83.64 255.255.255.224
+R2-SiteA(dhcp-config)#no default-router 10.67.83.66
+R2-SiteA(dhcp-config)#default-router 10.67.83.65
+---------default-router error clear---------------------------
+R2-SiteA(config)#router ospf 1
+R2-SiteA(config-router)#auto ref 1000
+R2-SiteA(config-router)#router-id 2.2.2.2
+R2-SiteA#clear ip ospf process 
+Reset ALL OSPF processes? [no]: yes

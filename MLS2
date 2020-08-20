@@ -1,0 +1,3 @@
+MLS2(config)#router ospf 1
+MLS2(config-router)#router-id 22.22.22.22
+MLS2#clear ip ospf process

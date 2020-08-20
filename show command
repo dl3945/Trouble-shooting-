@@ -1,0 +1,4 @@
+show cdp neighbor < connected port>
+show int status <port status>
+show spanning-tree summary
+show run | section router <protocol status & command>

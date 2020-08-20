@@ -1,0 +1,4 @@
+pc command
+
+ipconfig/renew <dhcp setting restart>
+tracert 10.67.83.5 < 10.67.83.5 all route show>

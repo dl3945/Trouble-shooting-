@@ -1,0 +1,23 @@
+R1-HQ#vlan database
+R1-HQ(vlan)# vtp client
+------vlan 10,20 add---------------------
+
+R1-HQ(config)#spanning-tree mode rapid-pvst  
+R1-HQ(config)#spanning-tree vlan 1-1000
+------------start spanning-tree-----------
+
+R1-HQ(config)#router ospf 1
+R1-HQ(config-router)#router 1.1.1.1
+R1-HQ(config-router)#auto ref 1000
+R1-HQ(config-router)#router-id 1.1.1.1
+R1-HQ#clear ip ospf process 
+Reset ALL OSPF processes? [no]: yes
+---------------ospf bandwidth, id clear----
+
+R1-HQ(config)#int fa 0/1
+R1-HQ(config-if)#no ip ospf network 
+R1-HQ#clear ip ospf process 
+---------------ospf connected -------------
+
+R1-HQ(config)#router ospf 1
+R1-HQ(config-router)#log-adjacency-changes
